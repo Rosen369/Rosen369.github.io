@@ -1,12 +1,12 @@
 # Dependencies
-markdown:         redcarpet
+markdown:         kramdown
 highlighter:      rouge
 
 # Permalinks
 permalink:        pretty
 
 # Setup
-title:            Hyde
+title:            Rosen's Portfolio
 tagline:          'A Jekyll theme'
 description:      'desc'
 url:              https://rosen369.github.io/
@@ -18,8 +18,5 @@ author:
 
 paginate:         5
 
-# Custom vars
-version:          2.1.0
-
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/Rosen369/Rosen369.github.io
