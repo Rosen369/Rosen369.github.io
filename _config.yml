@@ -6,9 +6,9 @@ highlighter:      rouge
 permalink:        pretty
 
 # Setup
-title:            Rosen's Portfolio
-tagline:          'Portfolio'
-description:      'desc'
+title:            Rosen
+tagline:          'Collections'
+description:      'Programmer'
 baseurl:          https://rosen369.github.io/
 
 author:
