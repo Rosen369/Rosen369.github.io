@@ -1,3 +1,5 @@
-# My Portfolio
+# My Blog Pages
 
-My Portfolio
+My Blog Pages
+
+Forked from [Hyde](https://github.com/poole/hyde)
