@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Try first blog
+desc: bla bla
 ---
 
 ## blablabla
