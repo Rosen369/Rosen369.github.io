@@ -1,23 +1,13 @@
 ---
 layout: post
 title: Try first blog
-desc: bla bla
+desc: How I started my blog project
+categories: [jotting]
+tags: []
 ---
 
-## blablabla
+## how this blog started
 
-__blablabla__
-
-```
-blablabla
-blablabla
-blablabla
-```
-
-- blablabla
-- blablabla
-- blablabla
-
-1. blablabla
-2. blablabla
-3. blablabla
+leetcode -> discuss -> profile -> github page -> hyde
+I found that the appearance of hyde - [A brazen two-column theme for Jekyll.](https://github.com/poole/hyde) just met my taste.
+And it could used for github pages so I just forked it and started this blog.
