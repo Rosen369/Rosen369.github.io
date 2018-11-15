@@ -56,3 +56,25 @@ public class KMP {
     }
 }
 ```
+
+The brute force method:
+
+```C#
+public int BruteForce (string s, string w) {
+    var m = 0;
+    var i = 0;
+    while (m < s.Length && i < w.Length) {
+        if (i == -1 || s[m] == w[i]) {
+            m++;
+            i++;
+        } else {
+            m = m - i + 1;
+            i = 0;
+        }
+    }
+    if (i == w.Length) {
+        return m - i;
+    }
+    return -1;
+}
+```
