@@ -12,10 +12,10 @@ public class QuickSort {
         if (nums == null || nums.Length < 2) {
             return;
         }
-        Partition (nums, 0, nums.Length - 1);
+        QuickCore (nums, 0, nums.Length - 1);
     }
 
-    private void Partition (int[] nums, int low, int high) {
+    private void QuickCore (int[] nums, int low, int high) {
         if (low >= high) {
             return;
         }
@@ -33,8 +33,8 @@ public class QuickSort {
             nums[j] = nums[i];
         }
         nums[i] = curr;
-        Partition (nums, low, j - 1);
-        Partition (nums, j + 1, high);
+        QuickCore (nums, low, j - 1);
+        QuickCore (nums, j + 1, high);
     }
 }
 ```
