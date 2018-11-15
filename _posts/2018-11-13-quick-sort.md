@@ -8,30 +8,33 @@ tags: [sort]
 
 ```C#
 public class QuickSort {
-    public int[] Sort (int[] nums) {
+    public void Sort (int[] nums) {
         if (nums == null || nums.Length < 2) {
-            return nums;
+            return;
         }
-        var res = new List<int> ();
-        var mid = nums.Length / 2;
-        var left = new List<int> ();
-        var right = new List<int> ();
-        for (int i = 0; i < nums.Length; i++) {
-            if (i == mid) {
-                continue;
-            }
-            if (nums[i] < nums[mid]) {
-                left.Add (nums[i]);
-            } else {
-                right.Add (nums[i]);
-            }
+        Partition (nums, 0, nums.Length - 1);
+    }
+
+    private void Partition (int[] nums, int low, int high) {
+        if (low >= high) {
+            return;
         }
-        left = Sort (left.ToArray ()).ToList ();
-        right = Sort (right.ToArray ()).ToList ();
-        res.AddRange (left);
-        res.Add (nums[mid]);
-        res.AddRange (right);
-        return res.ToArray ();
+        var curr = nums[low];
+        var i = low;
+        var j = high;
+        while (i < j) {
+            while (nums[j] > curr && i < j) {
+                j--;
+            }
+            nums[i] = nums[j];
+            while (nums[i] < curr && i < j) {
+                i++;
+            }
+            nums[j] = nums[i];
+        }
+        nums[i] = curr;
+        Partition (nums, low, j - 1);
+        Partition (nums, j + 1, high);
     }
 }
 ```
