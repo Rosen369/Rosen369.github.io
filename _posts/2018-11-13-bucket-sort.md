@@ -8,11 +8,10 @@ tags: [sort]
 
 ```C#
 public class BucketSort {
-    public int[] Sort (int[] nums, int bucketSize) {
+    public void Sort (int[] nums, int bucketSize) {
         if (nums == null || nums.Length < 2) {
-            return nums;
+            return;
         }
-        var res = new List<int> ();
         var max = nums.Max ();
         var min = nums.Min ();
         // Initialise buckets
@@ -26,14 +25,14 @@ public class BucketSort {
             buckets[(nums[i] - min) / bucketSize].Add (nums[i]);
         }
         // Sort each bucket
+        var index = 0;
         foreach (var bucket in buckets) {
             var arr = bucket.ToArray ();
             Array.Sort (arr);
             for (int i = 0; i < arr.Length; i++) {
-                res.Add (arr[i]);
+                nums[index++] = arr[i];
             }
         }
-        return res.ToArray ();
     }
 }
 ```
