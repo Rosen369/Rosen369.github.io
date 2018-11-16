@@ -8,9 +8,9 @@ tags: [sort]
 
 ```C#
 public class RadixSort {
-    public int[] Sort (int[] nums) {
+    public void Sort (int[] nums) {
         if (nums == null || nums.Length < 2) {
-            return nums;
+            return;
         }
         var max = nums[0];
         for (int i = 1; i < nums.Length; i++) {
@@ -18,19 +18,18 @@ public class RadixSort {
         }
         for (int exp = 1; max / exp > 0; exp *= 10) {
             var buckets = ListToBuckets (nums, exp);
-            nums = BucketsToList (nums, buckets);
+            BucketsToList (nums, buckets);
         }
-        return nums;
     }
 
-    private int[] BucketsToList (int[] nums, IList<IList<int>> buckets) {
+    private void BucketsToList (int[] nums, IList<IList<int>> buckets) {
+        var index = 0;
         var list = new List<int> ();
         foreach (var bucket in buckets) {
             foreach (var num in bucket) {
-                list.Add (num);
+                nums[index++] = num;
             }
         }
-        return list.ToArray ();
     }
 
     private IList<IList<int>> ListToBuckets (int[] nums, int exp) {
