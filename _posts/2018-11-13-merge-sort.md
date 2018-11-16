@@ -8,39 +8,42 @@ tags: [sort]
 
 ```C#
 public class MergeSort {
-    public int[] Sort (int[] nums) {
+    public void Sort (int[] nums) {
         if (nums == null || nums.Length < 2) {
-            return nums;
+            return;
         }
-        var res = new List<int> ();
-        var left = new List<int> ();
-        var right = new List<int> ();
-        var mid = nums.Length / 2;
-        for (int i = 0; i < nums.Length; i++) {
-            if (i <= mid) {
-                left.Add (nums[i]);
+        MergeCore (nums, 0, nums.Length);
+    }
+
+    public void MergeCore (int[] nums, int left, int right) {
+        if (right - left < 2) {
+            return;
+        }
+        var mid = (right - left) / 2 + left;
+        MergeCore (nums, left, mid);
+        MergeCore (nums, mid, right);
+        var temp = new int[right - left];
+        var k = 0;
+        var i = left;
+        var j = mid;
+        while (i < mid || j < right) {
+            if (i == mid) {
+                temp[k++] = nums[j++];
+                continue;
+            }
+            if (j == right) {
+                temp[k++] = nums[i++];
+                continue;
+            }
+            if (nums[i] < nums[j]) {
+                temp[k++] = nums[i++];
             } else {
-                right.Add (nums[i]);
+                temp[k++] = nums[j++];
             }
         }
-        left = Sort (left.ToArray ()).ToList ();
-        right = Sort (right.ToArray ()).ToList ();
-        for (int i = 0; i < nums.Length; i++) {
-            if (left.Count () == 0) {
-                res.AddRange (right);
-                break;
-            } else if (right.Count () == 0) {
-                res.AddRange (left);
-                break;
-            } else if (left[0] < right[0]) {
-                res.Add (left[0]);
-                left.RemoveAt (0);
-            } else {
-                res.Add (right[0]);
-                right.RemoveAt (0);
-            }
+        for (int s = left; s < right; s++) {
+            nums[s] = temp[s - left];
         }
-        return res.ToArray ();
     }
 }
 ```
