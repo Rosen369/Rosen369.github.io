@@ -31,7 +31,7 @@ public class PriorityQueue<T> where T : IComparable {
             return default (T);
         }
         T max = _pq[0];
-        Swap (0, _pq.Count - 1);
+        this.Swap (0, _pq.Count - 1);
         _pq.RemoveAt (_pq.Count - 1);
         this.SiftDown (0);
         return max;
@@ -45,7 +45,7 @@ public class PriorityQueue<T> where T : IComparable {
         if (index == -1) {
             return;
         }
-        Swap (index, _pq.Count - 1);
+        this.Swap (index, _pq.Count - 1);
         _pq.RemoveAt (_pq.Count - 1);
         this.SiftDown (index);
     }
@@ -60,8 +60,8 @@ public class PriorityQueue<T> where T : IComparable {
     }
 
     private void SiftDown (int i) {
-        int left = Left (i);
-        int right = Right (i);
+        int left = this.Left (i);
+        int right = this.Right (i);
         int largest = i;
         if (left <= _pq.Count - 1 && this.Less (i, left))
             largest = left;
@@ -76,9 +76,9 @@ public class PriorityQueue<T> where T : IComparable {
     private void SiftUp (int i) {
         if (i > 0) {
             var parent = Parent (i);
-            if (Less (parent, i)) {
-                Swap (parent, i);
-                SiftUp (parent);
+            if (this.Less (parent, i)) {
+                this.Swap (parent, i);
+                this.SiftUp (parent);
             }
         }
     }
