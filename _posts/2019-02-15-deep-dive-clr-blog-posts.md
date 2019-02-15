@@ -32,4 +32,4 @@ tags: [CLR]
 - [Strings and the CLR - a Special Relationship](http://mattwarren.org/2016/05/31/Strings-and-the-CLR-a-Special-Relationship/)
 
 __Reference:__
-[](https://github.com/dotnet/coreclr/blob/master/Documentation/deep-dive-blog-posts.md)
+[deep-dive-blog-posts](https://github.com/dotnet/coreclr/blob/master/Documentation/deep-dive-blog-posts.md)
