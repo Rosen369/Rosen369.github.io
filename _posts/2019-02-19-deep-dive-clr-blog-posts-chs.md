@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [翻译]深入了解CLR
+title: 深入了解CLR[翻译]
 desc: 深入了解CoreCLR源码的系列Blog
 categories: [.net]
 tags: [CLR,Translation]
