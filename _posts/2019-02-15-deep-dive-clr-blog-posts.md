@@ -10,7 +10,7 @@ tags: [CLR]
 
 - [Corestart 2.0: What's new for performance in .NET Core 2.0](https://www.ageofascent.com/2017/11/05/perfromance-dotnet-core-2-corestart-conference/)
 
-### Posts that take a high-level look at the entire source:
+### Posts that take a high-level look at the entire source
 
 - [A Hitchhikers Guide to the CoreCLR Source Code](http://mattwarren.org/2017/03/23/Hitchhikers-Guide-to-the-CoreCLR-Source-Code/)
 - [The 68 things the CLR does before executing a single line of your code](http://mattwarren.org/2017/02/07/The-68-things-the-CLR-does-before-executing-a-single-line-of-your-code/)
