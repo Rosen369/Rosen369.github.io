@@ -12,3 +12,7 @@ You just gone.
 Without hesitate.
 Left me behind.
 Tore me apart.
+
+from 2014.10.30
+to 2019.04.14
+bye
